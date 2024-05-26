@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #08001f, #30197d);
+  color: #fff;
+  position: relative;
+}
+
+.container {
+  width: 800px;
+  height: 180px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock {
+  font-size: 60px;
+  background-color: rgba(235, 0, 255, 0.11);
+  border-radius: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(40px); /* gives that cool blur effect*/
+}
+
+.container::before {
+  content: "";
+  width: 180px;
+  height: 180px;
+  background-color: #f41b75;
+  border-radius: 5px;
+  position: absolute;
+  left: -50px;
+  top: -50px;
+  z-index: -1; /* The z-index property specifies the stack order of an element.
+  An element with greater stack order is always in front of an element with a lower stack order.*/
+  /* we want this div to be behind the clock */
+}
+
+.container::after {
+  content: "";
+  width: 180px;
+  height: 180px;
+  background-color: #419aff;
+  border-radius: 50%;
+  position: absolute;
+  right: -30px;
+  bottom: -50px;
+  z-index: -1;
+}
+
+.clock span {
+  width: 110px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.clock span::after {
+  font-size: 16px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.hours::after {
+  content: "HOURS";
+}
+.mins::after {
+  content: "MINS";
+}
+.sec::after {
+  content: "SEC";
+}
