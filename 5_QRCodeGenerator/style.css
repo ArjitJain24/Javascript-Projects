@@ -49,3 +49,44 @@ body {
   cursor: pointer;
   font-weight: 500;
 }
+
+.qr {
+  width: 200px;
+  border-radius: 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s;
+}
+
+.qr img {
+  width: 100%;
+  padding: 10px;
+}
+
+.qr.show-img {
+  max-height: 300px;
+  margin: 10px auto;
+  border: 1px solid #d1d1d1;
+}
+
+/* adding the styles for shake effect */
+.error {
+  animation: shake 0.1s linear 10;
+}
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-2px);
+  }
+  50% {
+    transform: translate(0);
+  }
+  75% {
+    transform: translate(2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
