@@ -66,6 +66,7 @@ divs.forEach((div) => {
         turn.innerHTML = "X Won";
         audioOver.play();
         img.style.width = "12vw";
+        audioWin.load();
         audioWin.play();
       }
     } else {
@@ -77,6 +78,7 @@ divs.forEach((div) => {
         turn.innerHTML = "O Won";
         audioOver.play();
         img.style.width = "12vw";
+        audioWin.load();
         audioWin.play();
       }
     }
@@ -95,4 +97,5 @@ btn.addEventListener("click", (e) => {
   audioWin.pause();
   img.style.width = 0;
   line.style.width = 0;
+  count = 0;
 });
